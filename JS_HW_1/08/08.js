@@ -4,7 +4,7 @@ let userMoney = +prompt('Сколько у вас денег', '100');
 
 let chocolatePrice = +prompt('Введите цену одной шоколадки', '10');
 
-let chocolateNumber = userMoney / chocolatePrice;
+let chocolateNumber = Math.floor(userMoney / chocolatePrice);
 
 let userModulo = userMoney % chocolatePrice;
 
