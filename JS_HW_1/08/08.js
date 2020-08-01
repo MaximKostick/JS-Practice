@@ -6,7 +6,7 @@ let chocolatePrice = +prompt('Введите цену одной шоколад�
 
 let chocolateNumber = Math.floor(userMoney / chocolatePrice);
 
-let userModulo = userMoney % chocolatePrice;
+let userModulo = userMoney - chocolatePrice * chocolateNumber;
 
 alert(`На эти деньги вы сможете купить столько шоколадок: ${chocolateNumber}`);
 
