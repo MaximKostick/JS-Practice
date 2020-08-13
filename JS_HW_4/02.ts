@@ -1,11 +1,13 @@
 // Написать функцию, которая вычисляет факториал переданного ей числа
 
 function factorial(userNumber) {
-   let diff;
-   for (let i = 1; userNumber > 1; userNumber--) {
-      diff *= (userNumber * i);
+   let diff:number = userNumber;
+   let fact: number = 1;
+
+   for (; diff > 1; diff--) {
+      fact *= diff;
    }
-   return diff
+   return fact
 }
 
 let fun = factorial(+prompt("Введите число"));

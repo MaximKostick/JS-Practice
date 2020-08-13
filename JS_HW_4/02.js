@@ -1,10 +1,11 @@
 // Написать функцию, которая вычисляет факториал переданного ей числа
 function factorial(userNumber) {
-    var diff;
-    for (var i = 1; userNumber > 1; userNumber--) {
-        diff *= (userNumber * i);
+    var diff = userNumber;
+    var fact = 1;
+    for (; diff > 1; diff--) {
+        fact *= diff;
     }
-    return diff;
+    return fact;
 }
 var fun = factorial(+prompt("Введите число"));
 alert(fun);
