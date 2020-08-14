@@ -36,7 +36,7 @@ function timeInfo(time) {
 
 timeInfo(time);
 
-Функция изменения времени на переданное количество часов
+// Функция изменения времени на переданное количество часов
 
 function hourDiff(userHour){
    if (time.hour + userHour > 24) {
