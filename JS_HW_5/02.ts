@@ -69,3 +69,18 @@ let i
   let upNumbersAdd = firstFr.upNumber - secondFr.upNumber;
   alert(`${upNumbersAdd}/${i}`)
 }
+
+// Сокращение
+
+function fractionSimple (firstFr:fraction){
+   let result = (firstFr.upNumber > firstFr.downNumber) ? firstFr.upNumber : firstFr.downNumber;
+   while(result > 0) {
+      if(firstFr.upNumber % result == 0 && firstFr.downNumber % result == 0) {
+         break;
+      }
+      result--
+   }
+   let upNumberSimple = firstFr.upNumber / result;
+   let downNumberSimple = firstFr.downNumber / result;
+   alert(`${upNumberSimple}/${downNumberSimple}`);
+}
