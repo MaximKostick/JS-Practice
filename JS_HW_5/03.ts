@@ -26,44 +26,58 @@ do {
 
 // Функция вывода времени на экран
 
-function timeInfo(time) {
-      let info = ''
-      for (const key in time) {
-         info += `${key} : ${time[key]} \n`
-      }
-      alert(info)
-}
+// function timeInfo(time) {
+//       let info = ''
+//       for (const key in time) {
+//          info += `${key} : ${time[key]} \n`
+//       }
+//       alert(info)
+// }
 
-timeInfo(time);
+// timeInfo(time);
 
-// Функция изменения времени на переданное количество часов
+// // Функция изменения времени на переданное количество часов
 
-function hourDiff(userHour){
-   if (time.hour + userHour > 24) {
+// function hourDiff(userHour){
+//    if (time.hour + userHour > 24) {
     
-   time.hour =  userHour - (24 - time.hour);
-   alert(`${time.hour}:${time.minute}:${time.second}`)
-   }
-   else {
-      time.hour += userHour
-      alert(`${time.hour}:${time.minute}:${time.second}`)
-   }
+//    time.hour =  userHour - (24 - time.hour);
+//    alert(`${time.hour}:${time.minute}:${time.second}`)
+//    }
+//    else {
+//       time.hour += userHour
+//       alert(`${time.hour}:${time.minute}:${time.second}`)
+//    }
+// }
+
+// hourDiff(+prompt('Введите кол-во часов на которое хотите изменить время'));
+
+// // Функция изменения времени на переданное количество минут
+
+// function minuteDiff(userMinute){
+//    if (time.minute + userMinute >= 60) {
+//       time.minute =  userMinute - (60 - time.minute);
+//       time.hour++
+//       alert(`${time.hour}:${time.minute}:${time.second}`)
+//    }
+//    else {
+//       time.minute += userMinute
+//       alert(`${time.hour}:${time.minute}:${time.second}`)
+//    }
+// }
+
+// minuteDiff(+prompt('Введите кол-во минут на которое хотите изменить время'));
+
+function secondDiff(userSecond) {
+   let hourToSecond = time.hour * 3600;
+   let minuteToSecond = time.minute * 60;
+   let allSecond = hourToSecond + minuteToSecond + time.second + userSecond
+   let secondHour = allSecond - (allSecond % 3600);
+   let secondToHour = secondHour / 3600;
+   let secondMinute = (allSecond - secondHour) - ((allSecond - secondHour) % 60);
+   let secondToMinute = secondMinute / 60
+   time.second = allSecond - secondHour - secondMinute
+   
+   alert(`${secondToHour}:${secondToMinute}:${time.second}`)
 }
-
-hourDiff(+prompt('Введите кол-во часов на которое хотите изменить время'));
-
-// Функция изменения времени на переданное количество минут
-
-function minuteDiff(userMinute){
-   if (time.minute + userMinute >= 60) {
-      time.minute =  userMinute - (60 - time.minute);
-      time.hour++
-      alert(`${time.hour}:${time.minute}:${time.second}`)
-   }
-   else {
-      time.minute += userMinute
-      alert(`${time.hour}:${time.minute}:${time.second}`)
-   }
-}
-
-minuteDiff(+prompt('Введите кол-во минут на которое хотите изменить время'));
+secondDiff(+prompt('Введите кол-во секунд на которое хотите изменить время'));
