@@ -19,7 +19,7 @@ let allHalls = [{
    name: '3',
    seatNumber: 20,
    facultyName: 'Англ'
-}
+},
 {
    name: '4',
    seatNumber: 15,
