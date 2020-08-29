@@ -58,3 +58,22 @@ function buyProduct(productName:string){
    alert('Такого продукта в списке нет!')
 }
 buyProduct(prompt('Введите продукт который хотите купить \n Хлеб \n Яйца \n Сыр \n Мясо'));
+
+
+// Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, а не добавлять новую
+
+function addProduct(productName:string) {
+   for (let i = 0; i < shopList.length; i++) {
+      if (shopList[i].productName == productName) {
+         return shopList[i].productQuantity++
+      }
+   }
+
+   shopList.push({
+      productName: productName,
+      productQuantity: 1,
+      productStatus: 'Не куплено'
+   })
+}
+
+addProduct(prompt('Введите продукт \n Хлеб \n Яйца \n Сыр \n Мясо'))
