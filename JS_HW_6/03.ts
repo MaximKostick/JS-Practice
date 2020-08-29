@@ -18,9 +18,29 @@ let cssStyles = [{
 }
 ]
 
+
+// Первый вариант
+
 function printText(userText: string) {
    let html = '';
    html += `<p style=\"${cssStyles[0].styleName}:${cssStyles[0].styleValue};${cssStyles[1].styleName}:${cssStyles[1].styleValue};${cssStyles[2].styleName}:${cssStyles[2].styleValue};${cssStyles[3].styleName}:${cssStyles[3].styleValue};\">`
+   html +=userText;
+   html +='</p>'
+   document.write(html)
+}
+
+printText(prompt('Введите текст'));
+
+
+// Второй вариант
+
+function printText(userText: string) {
+   let html = '';
+   html += `<p style=\"`
+   for (let i = 0; i < cssStyles.length; i++) {
+      html += `${cssStyles[i].styleName}:${cssStyles[i].styleValue};`
+   }
+   html += '\">'
    html +=userText;
    html +='</p>'
    document.write(html)
